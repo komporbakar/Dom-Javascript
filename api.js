@@ -80,9 +80,9 @@ const filterBeritaBola = async()=>{
 
 // Create Card Berita Terupdate
 const addContentTerupdate = async() => {
-    const addContentTerupdate = document.querySelector('#contentTerbaru')
     const data = await filterBeritaTerbaru()
     data.forEach((item) => {
+        const addContentTerupdate = document.querySelector('#contentTerbaru')
         const tanggal = formatDate(item.pubDate)
         const div = document.createElement('div')
         div.classList = 'lg:w-1/2 xl:w-1/3 md:w-1/2 w-full mb-3 '

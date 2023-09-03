@@ -184,12 +184,10 @@ calc.addEventListener('click',(e) =>{
 
     if(!value1  || !value2){
         alert('Harap Input Nilai Terlebih Dahulu')
-        showHasil.innerText = '-'
     } else {   
         const hasil = calculator(value1, value2, operator)
-        console.log(hasil)
+        showHasil.innerText = hasil
     }
-    showHasil.innerText = hasil
     
 })
 
@@ -200,7 +198,6 @@ const btnGenerate = document.querySelector('#btnGen')
 const btnGenerateCard = document.querySelector('#btnGenCard')
 const bgCard = document.querySelectorAll('#bgCard')
 const btnReset = document.querySelector('#btnGenReset')
-console.log(bgCard)
 
 // Function change Background
 const changeBackground = (value1, value2, value3) => {
@@ -216,7 +213,6 @@ btnGenerate.addEventListener('click',() => {
     const value2 = Math.floor(Math.random() * 255)
     const value3 = Math.floor(Math.random() * 255)
     backgroundColor = changeBackground(value1,value2, value3)
-    console.log(backgroundColor)
     body.style.backgroundImage = ''
     body.style.backgroundColor = backgroundColor
     opacity.style = 'opacity: 100%';
@@ -227,7 +223,6 @@ btnGenerateCard.addEventListener('click',() => {
     const value2 = Math.floor(Math.random() * 255)
     const value3 = Math.floor(Math.random() * 255)
     const bgrnCard = changeBackground(value1,value2, value3)
-    console.log(bgrnCard)
     bgCard.forEach((item)=>{
         item.style.backgroundColor = bgrnCard
         opacity.style = 'opacity: 100%';
@@ -305,14 +300,11 @@ btnQuiz.addEventListener('click', () => {
             score = 0
         } else {
             const userAnswer = parseFloat(valueQuiz.value);
-            console.log( userAnswer, correctAnswer)
+            // console.log( userAnswer, correctAnswer)
             
             if (userAnswer === correctAnswer) {
                 alert('Jawaban Anda benar!')
-            score++;
-            if(score =>10){
-                alert('Selamat Anda Menang')
-            }
+                score++;
             } else {
                 alert('Jawaban Anda salah. Jawaban yang benar adalah ' + correctAnswer)
                 if(score > 0){
